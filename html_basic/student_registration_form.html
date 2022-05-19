@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my hobby</title>
+    <link rel="stylesheet" href="ex1.css">
+</head>
+
+<body>
+    <form action="ex1_form_table.html" method="get" style="height: 250px; width:560px">
+        <h1 style="background-color: orange; color:aliceblue; text-align:center">SỞ THÍCH CỦA BẠN</h1>
+        <table>
+            <tr>
+                <td  style="color:blue">
+                    Họ Và Tên
+                </td>
+                <td>
+                    <input type="text" name="yourname" id="yrn">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;color:blue">
+                    Email
+                </td>
+                <td>
+                    <input type="text" name="email">
+                </td> 
+            </tr>
+            <tr>
+                <td style="vertical-align: top;text-align: right; color: blue;">Sở thích</td>
+                <td>
+                   <table style="color:orange">
+                    <tr>
+                        <td><input type="checkbox" name="hobby">Thể thao</td>
+                        <td><input type="checkbox" name="hobby">Âm nhạc</td>
+                        <td><input type="checkbox" name="hobby">Đọc sách</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="hobby">Lướt web</td>
+                        <td><input type="checkbox" name="hobby">Chơi game</td>
+                        <td><input type="checkbox" name="hobby">Điện ảnh</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="hobby">Du lịch</td>
+                    </tr>
+                   </table>
+                </td>
+            </tr>
+            
+        </table>
+
+        <td><input type="submit" name="sent" value="Gửi thông tin"></td>
+        <td><input type="reset" name="reset" value="Nhập lại"></td>
+        
+        
+    </form>
+
+
+</body>
+
+</html>
