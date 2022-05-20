@@ -3,12 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
-    
 </head>
 <body>
-    <h2 id="intro"></h2>
+    <p onclick="do_something()"> Click me
+    </p>
+    <p id="twoclick">
+        Click me too
+    </p>
+    <!-- //onchange -->
+    <select id="mySelect">
+        <option value="BMW">BMW</option>
+        <option value="Mazda">CX5</option>
+        <option value="Toyota">Vios</option>
+        <option value="Mercedes">Mercerdes</option>
+    </select>
 </body>
 </html>
-<script src="index.js"></script>
+<script>
+    // onclick
+    function do_something(){
+        alert("Xin chào quý khách!")
+    }
+    
+    let temp = document.getElementById("twoclick");
+    temp.addEventListener("click",clickFunction);
+    function clickFunction(){
+        alert("Xin chào quý khách!");
+    }
+
+    //onchange
+    function go_out(){
+        let valueSelect = document.getElementById("mySelect").value;
+        alert(valueSelect);
+    }
+    
+    let a = document.getElementById("mySelect");
+    a.addEventListener("change",changeSomeThing);
+    function changeSomeThing(){
+        let valueSelect2 = document.getElementById("mySelect").value;
+        alert(valueSelect2);
+    }
+</script>

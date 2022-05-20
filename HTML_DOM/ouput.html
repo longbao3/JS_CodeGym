@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- bai1 -->
+    <button type="button" onclick="showMessage();">click me!</button>
+    <!-- bai2 -->
+    <div id="messageDiv">
+    </div>
+    <button type="button" onclick="showMessage2()">click me too!</button>
+    <!-- bai3 -->
+    <button type="button" onclick="showMessage3();">Click Me!</button>
+    <!-- bai3 -->
+    <button type="button" onclick="showMessage4();">Click Me!</button>
+</body>
+</html>
+<script>
+    // bai1
+    function showMessage(){
+        alert('Xin chào!');
+    }
+    // bai2
+    function showMessage2(){
+        document.getElementById('messageDiv').innerHTML = 'Xin Chào!';
+    }
+    // bai3
+    function showMessage3(){
+     document.write('Xin chào!');
+     //bai4
+     function showMessage4(){
+     console.log('Xin chào!');
+ }
+ }
+</script>
