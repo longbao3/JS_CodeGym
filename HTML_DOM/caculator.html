@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculator</title>
+</head>
+    <h1>Caculator</h1>
+    <input type="number" name="" id="number1"> </input>
+    <input type="number" name="" id="number2"> </input>
+    <br> <br> 
+
+    <button onclick="add()">Addition(+)</button>
+    <button onclick="sub()">Subtraction(-)</button>
+    <button onclick="Mul()">Multiplication(X)</button>
+    <button onclick="Div()">Division(/)</button>
+
+    <br><br>
+    <p>Result Division:
+        <p id="result">0</p>
+    </p>
+</body>
+</html>
+<script>
+    function add(){
+        let result1 = 0;
+        let number_1 = document.getElementById("number1").value;
+        let number_2 = document.getElementById("number2").value;
+        result = parseFloat(number_1) + parseFloat(number_2);
+        
+        document.getElementById("result").innerText = result;
+    }
+    function sub(){
+        let result1 = 0;
+        let number_1 = document.getElementById("number1").value;
+        let number_2 = document.getElementById("number2").value;
+        result = parseFloat(number_1) - parseFloat(number_2);
+        
+        document.getElementById("result").innerText = result;
+    }
+    function Mul(){
+        let result1 = 0;
+        let number_1 = document.getElementById("number1").value;
+        let number_2 = document.getElementById("number2").value;
+        result = parseFloat(number_1) * parseFloat(number_2);
+        
+        document.getElementById("result").innerText = result;
+    }
+    function Div(){
+        let result1 = 0;
+        let number_1 = document.getElementById("number1").value;
+        let number_2 = document.getElementById("number2").value;
+        result = parseFloat(number_1) / parseFloat(number_2);
+        
+        document.getElementById("result").innerText = result;
+    }
+</script>
