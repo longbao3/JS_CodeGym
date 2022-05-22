@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    th{
+        padding: 20px;
+    }
+    button {
+        margin-top: 20px;
+        padding:5px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <td rowspan="2">
+                <button onclick="convert()">Convert</button>
+            </td>
+        </tr>
+        <tr style="text-align:center ;">
+            <td>
+                <input type="text" name="" id="money">
+            </td>
+            <td>
+                <select name="" id="from">
+                    <option value="VNĐ">VNĐ</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="to">
+                    <option value="USD">USD</option>
+                    <option value="VNĐ">VNĐ</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <h2 id="show_result"> Result: </h2>
+</body>
+</html>
+<script>
+    function convert(){
+        let money = document.getElementById('money').value;
+        let from = document.getElementById('from').value;
+        let to = document.getElementById('to').value;
+        let result = 0;
+        if(from == 'USD' && to == 'VNĐ'){
+            result = parseFloat(money) * 23000;
+        
+        } else if(from == 'VNĐ' && to == 'USD'){
+            result = parseFloat(money) / 23000;
+        }
+        else 
+            result = money;
+        
+        document.getElementById('show_result').innerText = "Result: " + result + ' ' + to;
+    }
+</script>
