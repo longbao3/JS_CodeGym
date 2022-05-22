@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính số ngày trong tháng bất kì của năm 2022</h1>
+    <p>Nhập vào tháng cần tính</p>
+    <input type="text" name="" id="month">
+    <br><br>
+    <button onclick="total_day()">
+        Kiểm tra
+    </button>
+    <p id="show_result">Số ngày trong tháng là:</p>
+</body>
+</html>
+<script>
+    function total_day(){
+        let month = document.getElementById('month').value;
+        let total_day = 31;
+
+        switch (month){
+            case '2':
+            total_day = 28;
+            break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+            total_day = 30;
+            break;
+        }
+        document.getElementById('show_result').innerText = "Số ngày trong tháng "+ month+" của năm 2022 là: " + total_day +" ngày.";
+    }
+</script>
