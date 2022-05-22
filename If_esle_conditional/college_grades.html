@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính điểm ĐH khối D</h1>
+    <p>Môn Toán 
+       <input type="number" name="math" id="math"> 
+    </p>
+    <p>Môn Văn 
+        <input type="number" name="literature" id="literature"> 
+     </p>
+     <p>Môn Anh 
+        <input type="number" name="english" id="english"> 
+     </p>
+     <p>Khu vực 
+        <select id="area">
+            <option value="KV1">KV1</option>
+            <option value="KV2-NT">KV2-NT</option>
+            <option value="KV2">KV2</option>
+            <option value="KV3">KV3</option>
+        </select> 
+     </p>
+     <button id="total_grades" onclick="total()">Tính điểm</button>
+     <h3 id="show_total_grades" style="color:red;">
+         Tổng điểm khối D của bạn là:
+     </h3>
+</body>
+</html>
+<script>
+    function total(){
+        let area_grade = document.getElementById('area').value;
+        let bonus_grade = 0;
+        let math = document.getElementById('math').value,
+            literature = document.getElementById('literature').value,
+            english = document.getElementById('english').value;
+        let total_grades = parseFloat(math)+parseFloat(literature)+parseFloat(english);
+        
+        switch(area_grade){
+            case 'KV1': 
+            bonus_grade = 0.75;
+            break;
+            case 'KV2-NT': 
+            bonus_grade = 0.5;
+            break;
+            case 'KV2': 
+            bonus_grade = 0.25;
+            break;
+        }
+        total_grades += bonus_grade;
+        document.getElementById("show_total_grades").innerText = "Tổng điểm khối D của bạn là: " + total_grades;
+
+    
+    }
+</script>
