@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let year = prompt('Nhập vào năm muốn tính: ');
+    let result = ''; 
+    let can = parseInt(year) % 10;
+    let chi = parseInt(year) % 12;
+    switch(can){
+        case 0:
+        result += 'Canh ';
+        break;
+        case 1:
+        result += 'Tân ';
+        break;
+        case 2:
+        result += 'Nhâm ';
+        break;
+        case 3:
+        result += 'Quý ';
+        break;
+        case 4:
+        result += 'Giáp ';
+        break;
+        case 5:
+        result += 'Ất ';
+        break;
+        case 6:
+        result += 'Bính ';
+        break;
+        case 7:
+        result += 'Đinh ';
+        break;
+        case 8:
+        result += 'Mậu ';
+        break;
+        case 9:
+        result += 'Kỷ ';
+        break;
+    }
+    switch(chi){
+        case 0:
+        result += 'Thân';
+        break;
+        case 1:
+        result += 'Dậu';
+        break;
+        case 2:
+        result += 'Tuất';
+        break;
+        case 3:
+        result += 'Hợi';
+        break;
+        case 4:
+        result += 'Tí';
+        break;
+        case 5:
+        result += 'Sửu';
+        break;
+        case 6:
+        result += 'Dần';
+        break;
+        case 7:
+        result += 'Mẹo';
+        break;
+        case 8:
+        result += 'Thìn';
+        break;
+        case 9:
+        result += 'Tị';
+        break;
+        case 9:
+        result += 'Ngọ';
+        break;
+        case 9:
+        result += 'Mùi';
+        break;
+    }
+    alert('Năm âm lịch tương ứng là: ' + result);
+</script>
