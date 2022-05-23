@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Bang Casino</title>
+</head>
+<style>
+    button{
+        width: 500px;
+        height: 200px;
+        font-size: 100px;
+        background-color:yellowgreen ; color: rgb(4, 88, 88);
+    }
+    button:hover{
+        background-color: aqua;
+    }
+
+</style>
+<body>  
+    <button onclick="random_number()">Play</button>;
+</body>
+</html>
+<script>
+    function random_number(){
+        let input = prompt("Nhập vào khoảng số bạn muốn đoán từ 0 đến ..?.");
+        let key_number = Math.floor(Math.random()*input);
+        console.log(key_number);
+        let i,guess;
+        for(i=3;i>0;i--){
+            guess = prompt("Bạn đoán con số may mắn là: ");
+            if(guess == key_number){
+                alert("Chúc mừng bạn đã đoán đúng!");
+                break;
+            } else
+                alert("Tiếc quá, thử lại nhé! (bạn còn "+ (i-1) +" lượt đoán nữa)");
+        }
+    }
+</script>
