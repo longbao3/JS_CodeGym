@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let input = prompt("Nhập n: ");
+    let a = 1,
+        b = 0,
+        temp,
+        result = ' ';
+
+    while(input > 0) {
+        temp = a;
+        a = a + b;
+        b = temp;
+        result+=b+', ';
+        input--; 
+    }
+
+    alert(result);
+</script>
