@@ -33,8 +33,10 @@
             if(guess == key_number){
                 alert("Chúc mừng bạn đã đoán đúng!");
                 break;
-            } else
-                alert("Tiếc quá, thử lại nhé! (bạn còn "+ (i-1) +" lượt đoán nữa)");
+            } else if(guess > key_number)
+                alert("lớn quá, thử lại nhé! (bạn còn "+ (i-1) +" lượt đoán nữa)");
+            else if(guess < key_number)
+                alert("nhỏ quá, thử lại nhé! (bạn còn "+ (i-1) +" lượt đoán nữa)");
         }
     }
 </script>
