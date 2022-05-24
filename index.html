@@ -3,46 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .table2{
+        border-collapse:collapse ;
+        border: solid black 1px;
+    }
+    h1{
+        text-align: center;
+    }
+    div{
+        width: 625px;
+    }
+    button{
+        padding: 0px;
+        margin: 0px;
+ 
+    }
+</style>
 <body>
-    <p onclick="do_something()"> Click me
-    </p>
-    <p id="twoclick">
-        Click me too
-    </p>
-    <!-- //onchange -->
-    <select id="mySelect">
-        <option value="BMW">BMW</option>
-        <option value="Mazda">CX5</option>
-        <option value="Toyota">Vios</option>
-        <option value="Mercedes">Mercerdes</option>
-    </select>
+    <div>
+    <h1>Tạo thời khóa biểu</h1>
+    <table>
+        <tr>
+            <td>Lớp:</td>
+            <td>
+                <input type="text" value="12A" name="" id="">
+            </td>
+            <td>
+                Thời gian học: 
+            </td>
+            <td>
+                <select name="" id="">
+                    <option value="">1h-2h</option>
+                    <option value="">2h-3h</option>
+                    <option value="">3h-4h</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Giáo viên:</td>
+            <td><input type="text" value="Nguyễn Văn A"></td>
+            <td>Ngày học:</td>
+            <td>
+                <input type="radio" name="calerder" id="">Thứ 3,5,7
+                <input type="radio" name="calerder" id="">Thứ 2,4,6
+            </td>
+        </tr>
+        <tr>
+            <td>Phòng học:</td>
+            <td>
+                <select name="" id="">
+                    <option value="">A1</option>
+                    <option value="">A1</option>
+                    <option value="">A3</option>
+                </select>
+            </td>
+            <td>Mật khẩu phòng:</td>
+            <td> 
+                <input type="text" name="" id="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button>Tạo</button>
+                <button style="background-color:rgb(205, 67, 17); margin-left: -4px;">Hủy</button>
+            </td>
+        </tr>
+    </table>
+    <table class="table2" border="solid 1px">
+        <tr>
+            <td colspan="3" style="color:gray;"></td>
+            <td style="background-color: rgb(243, 152, 107);">Thứ 3</td>
+            <td style="background-color: rgb(243, 152, 107);">Thứ 5</td>
+            <td style="background-color: rgb(243, 152, 107);">Thứ 7</td>
+        </tr>
+        <tr style="background-color: rgb(242, 118, 55);">
+            <td>Tuần</td>
+            <td>Ngày bắt đầu</td>
+            <td>Ngày kết thúc</td>
+            <td colspan="3" style="text-align:center;">Môn học</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>
+                <input type="date" name="" value="dd/mm/yy" id="">  
+            </td>
+            <td>
+                <input type="date" name="" value="dd/mm/yy" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>
+                <input type="date" name="" value="dd/mm/yy" id="">  
+            </td>
+            <td>
+                <input type="date" name="" value="dd/mm/yy" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+        </tr>
+        <tr>
+            <td>03</td>
+            <td>
+                <input type="date" name="" value="dd/mm/yy" id="">  
+            </td>
+            <td>
+                <input type="date" name="" value="dd/mm/yy" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+            <td>
+                <input type="text" name="" value="" id="">  
+            </td>
+        </tr>
+    </table>
+    </div>
 </body>
 </html>
-<script>
-    // onclick
-    function do_something(){
-        alert("Xin chào quý khách!")
-    }
-    
-    let temp = document.getElementById("twoclick");
-    temp.addEventListener("click",clickFunction);
-    function clickFunction(){
-        alert("Xin chào quý khách!");
-    }
-
-    //onchange
-    function go_out(){
-        let valueSelect = document.getElementById("mySelect").value;
-        alert(valueSelect);
-    }
-    
-    let a = document.getElementById("mySelect");
-    a.addEventListener("change",changeSomeThing);
-    function changeSomeThing(){
-        let valueSelect2 = document.getElementById("mySelect").value;
-        alert(valueSelect2);
-    }
-</script>
