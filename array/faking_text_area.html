@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Type anything slowly</h2>
+    <form>
+        <textarea onkeydown="fakeType()" name="" id="text" cols="30" rows="10"></textarea>
+    </form>
+</body>
+</html>
+<script>
+    let array = ['B','Ạ','N',' ','N','G','Ố','C',' ','L','Ắ','M'];
+    let n ="";
+    function fakeType(){
+        let t = document.getElementById('text').value;
+        let stop = t.length;
+        if(stop > 0){
+            for(let i = 0; i<stop; i++){
+                n+= array[i];
+                if( i == 12){
+                    document.getElementById("text").value = "";
+                    n = "";
+                }
+            }
+        }
+        document.getElementById("text").value = n;
+        n = "";
+        setTimeout("fakeType()", 1);
+    }
+</script>
