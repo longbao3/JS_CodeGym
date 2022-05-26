@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // //bai1
+    // let array = ["Red", "Green", "White", "Black"];
+    // alert(array.join());
+
+    //bai2
+    // let input = prompt("Enter a number: ");
+    // let result = [];
+    // for(let i = 0; i<input.length; i++){
+    //     result[i] = input[i];
+    // }
+    // for(i = 0; i < (result.length - 1); i++){
+    //     if(result[i]%2==0 && result[i+1]%2==0)
+    //         result[i] = result[i] + "-";
+    // }
+    // for(i = 0;i<result.length;i++){
+    //     document.write(result[i]);
+    // }
+    // console.log(result.join(''));
+
+    //bai3
+    let input3 = prompt("Nhập vào chuỗi: ");
+    let str = [];
+    for(let i = 0; i < input3.length; i++){
+        str[i] = input3[i];
+    }
+    console.log(str);
+    for( let i = 0; i < str.length ;i++){
+        if(str[i] >= 'A' && str[i] <= 'Z')
+            str[i] = str[i].toLowerCase();
+        else if(str[i] >= 'a' && str[i] <= 'z')
+            str[i] = str[i].toUpperCase();
+    }
+    console.log(str);
+    document.write(str.join(''));
+</script>
