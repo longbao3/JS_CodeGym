@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let nums = [];
+    let i;
+    for(i = 0; i<100; ++i){
+        nums[i] = Math.floor(Math.random() * 101);
+    }
+    // console.log(typeof(nums));
+    // for(i = 0; i<nums.length; i++)
+    //     console.log(nums[i]);
+    function min_value(){
+        let min = nums[0];
+        for(i = 0; i<nums.length; i++){
+            if(nums[i] < min)
+                min = nums[i];
+        }
+        return min;
+    }
+    function max_value(){
+        let max = nums[0];
+        for(i = 0; i<nums.length; i++){
+            if(nums[i] > max)
+                max = nums[i];
+        }
+        return max;
+    }
+    function display_array(nums){
+        for(i = 0; i<nums.length; i++){
+            document.write(nums[i]+" ")
+        }
+    }
+
+    display_array(nums);
+    
+    document.write( "<br><br>"+"Min of array: "+min_value()+"<br><br>");
+
+    document.write("Max of array: "+max_value());
+
+</script>
