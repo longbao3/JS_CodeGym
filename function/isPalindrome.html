@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function isPalindrome(str,reverse_str){
+        if(str == reverse_str)
+            return true;
+        return false;
+    }
+    let str = prompt("Enter a string: ");
+    let input_array = str.split("");
+    reverse_arr = input_array.reverse();
+    reverse_str = reverse_arr.join("");
+    // console.log(reverse_arr);
+    // console.log(reverse_str);
+    // console.log(isPalindrome(str,reverse_str));
+    alert(isPalindrome(str,reverse_str));
+</script>
