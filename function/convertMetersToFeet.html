@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Metter to Feet
+        <input onkeydown="footToMeter()" type="number" id="foot">
+        <span id="result_metter"> = . . .feet </span>
+    </p>
+    <p> Feet to Metter
+        <input onkeydown="metterToFoot()" type="number" id="metter">
+        <span id="result_foot"> = . . .metter </span>
+    </p>
+</body>
+</html>
+<script>
+    function footToMeter(){
+        let input_foot = document.getElementById("foot").value;
+        let result_metter = input_foot * 0.305;
+        document.getElementById("result_metter").innerHTML = "= "+ result_metter + "metter";
+    }
+    function metterToFoot(){
+        let input_foot = document.getElementById("metter").value;
+        let result_metter = input_foot * 3.279;
+        document.getElementById("result_foot").innerHTML = "= "+ result_metter + "foot";
+    }
+</script>
