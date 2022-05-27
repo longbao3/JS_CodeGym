@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // //bai 1 compare number
+    // function CompareTwoNumber(number1,number2){
+    //     if(number1 > number2)
+    //         alert("Number one > Number two !");
+    //     else if( number2 >= number1)
+    //         alert("Sum of two numbers: " + (parseFloat(number1) + parseFloat(number2) ));
+    // }
+
+    // let number1 = prompt("Enter number 1: ");
+    // let number2 = prompt("Enter number 2: ");
+    // CompareTwoNumber(number1,number2);
+    
+
+
+
+    // //bai2  full name of stars
+    // let array1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+    // let array2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" ,"Leo"]
+
+    // let nameOfStar = prompt("Enter a name of star: ");
+    // alert(findStarName(nameOfStar));
+    // function findStarName(name){
+    //     let fullName = "";
+    //     console.log(fullName);
+    //     for(let i = 0; i<7; i++){
+    //         if(name == array1[i]){
+    //             fullName = array1[i] +" "+array2[i];
+    //             return fullName;
+    //         }
+    //     }
+    //     fullName = "This name is not found!";
+    //     return fullName;
+    // }
+
+
+
+
+    // //bai3 square
+    // let input = prompt("Enter a number: ");
+    // let input_number = parseFloat(input);
+    // alert(powerOfTwo(input_number));
+    // function powerOfTwo(number){
+    //     return number*number;
+    // }
+
+
+
+
+    //bai4 Area and perimeter of circle
+    // let input = prompt("Enter a radius of circle:");
+    // let radius_number = parseFloat(input); 
+    // console.log(AreaOfCircle(radius_number));
+    // console.log(PerimeterOfCircle(radius_number));
+
+    // function AreaOfCircle(radius){
+    //     return 3.14*radius*radius;
+    // }
+    // function PerimeterOfCircle(radius){
+    //     return 3.14*radius*2;
+    // }
+
+
+
+    // //bai 5 factorial of a number
+    // function Factorial(x){
+    //     if(x == 0)
+    //         return 0;
+    //     let result = 1;
+    //     for(let i = 1; i<=x; i++){
+    //         result*=i;
+    //     }
+    //     return result;
+    // }
+    // console.log(Factorial(5)) ;
+    
+
+
+    // //bai 6
+    // function isNumber(a){
+    //     return isFinite(a);
+    // }
+    // let a = prompt("Enter somthing:")
+    // alert(isNumber(a));
+
+
+
+    // //bai 7
+    // function MaxOfThreeNumber(number1,number2,number3){
+    //     let max = number1;
+    //     if(number2 > max)
+    //         max = number2;
+    //     if(number3 > max)
+    //         max = number3;
+    //     return max;
+    // }
+    // alert(MaxOfThreeNumber(6,4,5));
+
+
+
+    // // bai 8
+    // function checkPositiveNumber(number){
+    //     if(number >= 0)
+    //         return true;
+    //     else
+    //         return false;
+    // }
+    // alert(checkPositiveNumber(-1));
+
+
+
+    // //bai 9 rervese array
+    // function rerveseArray(array){
+    //     let start = 0;
+    //     let end = array.length-1;
+    //     let temp;
+    //     while(start<end){
+    //         temp = array[start];
+    //         array[start] = array[end];
+    //         array[end] = temp;
+    //         start++;
+    //         end--;
+    //     }
+    //     return array;
+    // }
+    // let arr = [1,2,3,4,5,6,7,8,8];
+    // let rervese_arr = rerveseArray(arr);
+    // console.log(rervese_arr);
+
+
+
+    //bai 10 the number of occurrences
+    function CheckNumber(array,a){
+        let count = 0;
+        for(let i = 0; i < array.length; i++){
+            if(array[i] == a){
+                count++;
+            }
+        }
+        if(count){
+            return count;
+        } else
+            return -1;
+    }
+    let arr = ['e','m',' ','ă','n',' ','c','ơ','m',' ','c','h','ư','a'];
+    console.log(CheckNumber(arr,"m"));
+</script> 
