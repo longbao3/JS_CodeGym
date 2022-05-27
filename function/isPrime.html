@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Eratosthenes(){
+        let N = 10000;
+        let makerArray = [];
+        for(let i = 2; i < N ; i++){
+            makerArray[i] = 1;
+        }
+
+        for(let i = 0; i < N; i++){
+            if(makerArray[i]){
+                for(let j = 2*i; j < N; j+= i){
+                    makerArray[j] = 0;
+                }
+            }
+        }
+        let primeArray = [];
+        let indexOfPrimeArray = 0;
+        for( let i = 2; i < N; i++){
+            if(makerArray[i] == 1){
+                primeArray[indexOfPrimeArray] = i;
+                indexOfPrimeArray++;
+            }
+        }
+        // console.log(primeArray);
+        return primeArray;
+    }
+    let primeArray =  Eratosthenes();
+    let number = prompt("Enter a number < 100000: ");
+    for( let i = 0; i<primeArray.length ; i++){
+        if(number == primeArray[i]){
+            alert(" Number is prime!");
+            break;
+        } else  
+            alert(" Number is not prime!");
+    }
+</script>
