@@ -6,3 +6,5 @@ function getValue() {
     alert("Tên của bạn là " + myName); // hiển thị tên của người dùng        
     
     }  
+
+    parseInt)_
