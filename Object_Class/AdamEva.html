@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    class Apple{
+        constructor(weight){
+            this.weight = 10;
+        }
+        decrease(){
+            if(this.weight > 0)
+                this.weight--;
+        }
+        isEmpty(){
+            if(this.weight > 0)
+                return true; 
+            return false;
+        }
+        getWeight(){
+            return this.weight;
+        }   
+    };
+
+    class Human{
+        constructor(name,gender,kg){
+            this.name = name;
+            this.gender = gender;
+            this.kg = kg;
+        }
+        isMale(){
+            if(this.gender == "male")
+                return true;
+            return false;
+        }
+        setGender(gender){  
+            this.gender = gender;
+        }
+        checkApple(apple){
+            
+        }
+        eat(){
+            this.kg += 1;
+        }
+        say(){
+            console.log("Hello i am Adam or Eva.");
+        }
+        getName(){
+           return this.name;
+        }
+        setName(name){
+            this.name;
+        }
+        getkg(){
+            return this.kg;
+        }
+        setkg(kg){
+            this.kg = kg;
+        }
+    }
+    let apple = new Apple(10);
+    let human = new Human("Adam","male",71);
+    human.say();
+
+    if(apple.isEmpty()){
+        human.eat();
+        apple.decrease();
+    }
+    console.log(apple.getWeight());
+    console.log(human.checkApple());
+
+    
+    console.log("Name: " + human.getName())
+    if(human.isMale())
+        console.log("Gender: male" );
+    else
+        console.log("Gender: female");
+    console.log("Weight: " + human.getkg());
+</script>
+</body>
+</html>
