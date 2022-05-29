@@ -26,13 +26,13 @@
             setHeight(height){
                 this.height = height;
             }
-            Area(){
+            area(){
                 return alert("Area = " + this.width*this.height);
             }
-            Perimeter(){
+            perimeter(){
                 return alert("Perimeter = " + (this.width+this.height) * 2);
             }
-            ShowRectangle(){
+            showRectangle(){
                 let canvas = document.getElementById("myCanvas");
                 if(canvas.getContext){
                     var ctx = canvas.getContext('2d');
@@ -44,9 +44,9 @@
         let rectangle = new Rectangle();
         rectangle.setHeight(100);
         rectangle.setWidth(300);
-        rectangle.ShowRectangle();
-        rectangle.Area();
-        rectangle.Perimeter();
+        rectangle.showRectangle();
+        rectangle.area();
+        rectangle.perimeter();
     </script>
 </body>
 </html>
