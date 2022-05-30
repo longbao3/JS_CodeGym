@@ -43,10 +43,12 @@
             this.gender = gender;
         }
         checkApple(apple){
-            
+            this.apple = apple;
+            return this.apple.isEmpty();
         }
-        eat(){
-            this.kg += 1;
+        eat(apple){
+            this.apple = apple;
+            this.apple.decrease();
         }
         say(){
             console.log("Hello i am Adam or Eva.");
@@ -66,14 +68,12 @@
     }
     let apple = new Apple(10);
     let human = new Human("Adam","male",71);
-    human.say();
 
     if(apple.isEmpty()){
-        human.eat();
-        apple.decrease();
+        human.eat(apple);
     }
     console.log(apple.getWeight());
-    console.log(human.checkApple());
+    console.log(human.checkApple(apple));
 
     
     console.log("Name: " + human.getName())
