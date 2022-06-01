@@ -10,45 +10,47 @@
 
 <body>
 
-    <canvas id="myCanvas" width="800px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
+    <canvas id="game" width="1000px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
 
     <script>
-        function Circle(x, y, radius) {
-            this.x = x;
-            this.y = y;
+        let topPosition = 0;
+        let bottomPosition = 1000;
+        let timeLoop = 10;
+
+        function Circle(positionX, positionY, radius) {
+            this.positionX = positionY;
+            this.positionX = positionY;
             this.radius = radius;
         }
+        let ctx = document.getElementById("game").getContext("2d");
+
+        function drawCircle() {
+            ctx.beginPath();
+            ctx.arc(circle.positionX, circle.positionY, circle.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        function getRandomHex() {
+            return Math.floor(Math.random() * 255);
+        }
+
+        function getRandomColor() {
+            let red = getRandomHex();
+            let green = getRandomHex();
+            let blue = getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green + ")";
+        }
         function createCircle() {
-            var ctx = document.getElementById("myCanvas").getContext("2d");
-            var circle = new Circle(50, 50, 50);
-            ctx.beginPath();
-            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
-            ctx.fill();
-            return circle;
-        }
-        function moveCircle(circle){
-            for(;circle.x < 800; circle.x += 100 ){
-            // circle.x+=100;
-            console.log(circle.x);
-            let ctx = document.getElementById("myCanvas").getContext("2d");
-            ctx.beginPath();
-            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
-            ctx.fill();
-            ctx.clearRect(circle.x-50,0, 100, 100);
-            }
-        }
-        function clearCircle(circle){
 
+            let radius = Math.floor(Math.random() * 80);
+            let color = getRandomColor();
+            var x = Math.random() * window.innerWidth;
+            var y = Math.random() * window.innerHeight;
+
+            drawCircle();
         }
-
-
-        let circle1 = createCircle();
-        console.log(circle1);
-        moveCircle(circle1);
-        // if( circle1.x < 800){
-        //     setInterval(moveCircle(circle1),10);
-        // }
     </script>
+
 </body>
 
 </html>

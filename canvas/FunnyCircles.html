@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <canvas id="myCanvas" width="1000px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
 
     <script>
         function Circle(x, y, radius) {
@@ -32,13 +32,13 @@
         //     ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
         //     ctx.fill();
         // }
+        let ctx = document.getElementById("myCanvas").getContext("2d");
         function createCircle(){
-            var ctx = document.getElementById("myCanvas").getContext("2d");
-            var radius = Math.floor(Math.random()*80);
-            var color = getRandomColor();
-            var x = Math.random() * window.innerWidth;
-            var y = Math.random() * window.innerHeight;
-            var circle = new Circle(x,y,radius);
+            let radius = Math.floor(Math.random()*80);
+            let color = getRandomColor();
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            let circle = new Circle(x,y,radius);
             ctx.beginPath();
             ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
             ctx.fillStyle = color;
@@ -51,22 +51,28 @@
             return Math.floor(Math.random()*255);
         }
         function getRandomColor(){
-            var red = getRandomHex();
-            var green = getRandomHex();
-            var blue =getRandomHex();
+            let red = getRandomHex();
+            let green = getRandomHex();
+            let blue =getRandomHex();
                 return "rgb("+red+","+blue+","+green+")";
         }
         function createMultipleCircle(){
             let circleArray = [];
-		    for(var i = 0; i < 30; i++){
+		    for(let i = 0; i < 30; i++){
     	    circleArray.push(createCircle());
             }
             return circleArray;
         }
+        let yDistance = 1;
         function moveCircle(circle){
-            if(circle.x < 1000){
-                circle.x += 10;
+            ctx.clearRect(circle.x,circle.y,160,160);
+
+            let isTouchTop = circle.x <= 0 ;
+            let isTouchBottom = circle.y + 2*circle.radius > gameBottomPosition;
+            if( isTouchTop || isTouchBottom) {
+                yDistance = -yDistance;
             }
+            carYposition += yDistance; 
             ctx.beginPath();
             ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
             ctx.fillStyle = color;
@@ -75,6 +81,7 @@
 
         let circleArray = createMultipleCircle();
         console.log(circleArray);
+        setInterval(moveCircle, 10);
  
 
     </script>
