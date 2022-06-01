@@ -43,26 +43,39 @@
             ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
             ctx.fillStyle = color;
             ctx.fill();
+            return circle;
         }
+
 
         function getRandomHex(){
             return Math.floor(Math.random()*255);
         }
         function getRandomColor(){
             var red = getRandomHex();
-            var green =getRandomHex();
+            var green = getRandomHex();
             var blue =getRandomHex();
                 return "rgb("+red+","+blue+","+green+")";
         }
         function createMultipleCircle(){
+            let circleArray = [];
 		    for(var i = 0; i < 30; i++){
-    	    createCircle();
+    	    circleArray.push(createCircle());
+            }
+            return circleArray;
         }
-        function moveCircle(){
+        function moveCircle(circle){
+            if(circle.x < 1000){
+                circle.x += 10;
+            }
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
 
-        }
-        }
-        createMultipleCircle();
+        let circleArray = createMultipleCircle();
+        console.log(circleArray);
+ 
 
     </script>
 </body>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.some2 = function (callback) {
+            for (let index in this) {
+                if (this.hasOwnProperty(index)) {
+                    if (callback(this[index], index, this))
+                        return true;
+                }
+            }
+            return false;
+
+        }
+        let courses = [
+            {
+                name: 'javascript',
+                coin: 680,
+                isFinish: false,
+            },
+            {
+                name: 'PHP',
+                coin: 860,
+                isFinish: false,
+            },
+            {
+                name: 'Ruby',
+                coin: 980,
+                isFinish: true,
+
+            }
+        ];
+        let result = courses.some2(function (course, index, array) {
+            console.log(course); //Kiểm tra xem some() có duyệt qua các phần tử rỗng không?
+            return course.isFinish;
+        });
+        console.log(result);
+
+        const numbers = [1, 3, 3, 5];
+
+        console.log(numbers.some2(function (number) {
+            return number % 2 === 0;
+        })); 
+        // Output: false
+
+        console.log(numbers.some2(function (number, index) {
+            return index % 2 === 0;
+        })); 
+        // Output: true
+
+        console.log(numbers.some2(function (number, index, array) {
+            return array.length % 2 === 0;
+        }));
+        //  Output: true
+    </script>
+</body>
+
+</html>

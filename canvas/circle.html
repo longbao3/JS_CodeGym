@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="800px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
+
+    <script>
+        function Circle(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        function createCircle() {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            var circle = new Circle(50, 50, 50);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fill();
+            return circle;
+        }
+        function moveCircle(circle){
+            for(;circle.x < 800; circle.x += 100 ){
+            // circle.x+=100;
+            console.log(circle.x);
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.clearRect(circle.x-50,0, 100, 100);
+            }
+        }
+        function clearCircle(circle){
+
+        }
+
+
+        let circle1 = createCircle();
+        console.log(circle1);
+        moveCircle(circle1);
+        // if( circle1.x < 800){
+        //     setInterval(moveCircle(circle1),10);
+        // }
+    </script>
+</body>
+
+</html>

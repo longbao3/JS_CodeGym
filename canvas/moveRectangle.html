@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="game" width="800" height="600" style="border: 3px solid #000000;"></canvas>
+
+    <script>
+        // let gameContext = document.getElementById("game").getContext("2d");
+        // gameContext.beginPath();
+        // gameContext.fillStyle = 'red';
+        // gameContext.fillRect(20, 20, 150, 100);
+
+        // let carYposition = 20;
+
+        // function drawCar() {
+        //     gameContext.beginPath();
+        //     gameContext.fillStyle = '#fa4b2a';
+        //     gameContext.fillRect(20, carYPosition, 150, 100);
+        // }
+        // function moveCarUp() {
+        //     gameContext.clearRect(20, carYPosition, 150, 100);
+        //     if (carYPosition > 0) {
+        //         carYPosition--;
+        //     }
+        //     drawCar();
+
+        // }
+        // function moveCarDown() {
+
+        //     // Xoá hình chữ nhật đã vẽ trước đó
+        //     gameContext.clearRect(20, carYPosition, 150, 100);
+
+        //     if (carYPosition < 600) {
+        //         carYPosition++;
+        //     }
+
+        //     drawCar();
+
+        // }
+        // setInterval(moveCarDown, 10);
+
+        let gameContext = document.getElementById("game").getContext("2d");
+        let carYposition = 20;
+        let carXposition = 20;
+
+        let carWidth = 150;
+        let carHeight = 100;
+
+        let gameTopPosition = 0;
+        let gameBottomPosition = 600;
+        let timeLoop = 10;
+
+        function drawCar(){
+            gameContext.beginPath();
+            gameContext.fillstyle = "red";
+            gameContext. fillRect(carXposition,carYposition,carWidth,carHeight);
+        }
+
+        let yDistance = 1;
+        function moveCar(){
+            gameContext.clearRect(carXposition,carYposition,carWidth,carHeight);
+
+            let isTouchTop = carYposition < gameTopPosition;
+            let isTouchBottom = carYposition + carHeight > gameBottomPosition;
+            if( isTouchTop || isTouchBottom) {
+                yDistance = -yDistance;
+            }
+            carYposition += yDistance; 
+            drawCar();
+        }
+        setInterval(moveCar, timeLoop);
+    </script>
+</body>
+
+</html>

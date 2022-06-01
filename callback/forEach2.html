@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.forEach2 = function(callback) {
+            for( let index in this){
+                // duyệt qua cả method trong _proto_ nên cần dùng điều kiện bên dưới để loại bỏ 
+                if(this.hasOwnProperty(index)){
+                    callback(this[index], index, this);
+                }
+            }
+        }
+
+        let courses = [
+            'Javascript',
+            'PHP',
+            'Ruby'
+        ]
+        courses.forEach2(function(course, index, array){
+            console.log(course, index, array);
+        })
+    </script>
+</body>
+</html>
