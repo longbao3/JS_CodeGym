@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Remote{
+            constructor(){
+            }
+            changeChanelRemote(TV,nextChanel){
+                return TV.changeChanel(nextChanel);
+            }
+            changeVolumeRemote(TV,number){
+                return TV.changeVolumn(number);
+            }
+            turnOn(tv){
+               tv.turnOn();
+               alert("TV is ON");
+               return
+            }
+            turnOff(tv){
+               tv.turnOff(); 
+               alert("TV is OFF");
+               return; 
+            }
+        }
+        class TiVi{
+            constructor(chanel,volumn,status){
+                this.chanel = chanel;
+                this.volumn = volumn;
+                this.status = status;
+            }
+            showInformation(){
+                if(this.status === "OFF")
+                   alert("OFF");
+                else
+                    console.log(this.chanel, this.volumn,this.status);
+            }
+            changeChanel(nextChanel){
+                this.chanel = nextChanel;
+            }
+            changeVolumn(volumnValue){
+                this.volumn += volumnValue;
+            }
+            turnOn(){
+               return this.status = "ON";
+            }
+            turnOff(){
+               return this.status = "OFF";
+            }
+        }
+
+        let Samsung_Premiere_2022 = new TiVi(1,10,"OFF");
+        let remoteControl = new Remote();
+        remoteControl.turnOn(Samsung_Premiere_2022);
+        remoteControl.changeChanelRemote(Samsung_Premiere_2022,7);
+        Samsung_Premiere_2022.showInformation();
+        remoteControl.changeChanelRemote(Samsung_Premiere_2022,3);
+        Samsung_Premiere_2022.showInformation();
+        remoteControl.changeVolumeRemote(Samsung_Premiere_2022,2);
+        Samsung_Premiere_2022.showInformation();
+        remoteControl.changeVolumeRemote(Samsung_Premiere_2022,2);
+        Samsung_Premiere_2022.showInformation();
+        remoteControl.turnOff(Samsung_Premiere_2022);
+    </script>
+</body>
+</html>
