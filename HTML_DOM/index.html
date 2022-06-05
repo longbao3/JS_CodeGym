@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tìm kiếm</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="./index.js"></script>
+    <style>
+        #search_advance {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tìm kiếm dữ liệu</h1>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <td>Nhập tiêu đề</td>
+            <td>
+                <input type="text" id="title" value="" /> <br />
+                <a href="#" id="show_search_advance" onclick="show_search_advance()">Tìm kiếm nâng cao</a>
+            </td>
+        </tr>
+        <tr id="search_advance">
+            <td>Chọn chuyên mục</td>
+            <td>
+                <select id="category">
+                    <option value="1">PHP</option>
+                    <option value="2">Javascript</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <p id="news"></p>
+</body>
+<script>
+    let key = 1;
+    function show_search_advance() {
+        if (key == 1) {
+            document.getElementById("show_search_advance").innerHTML = "Bỏ tìm kiếm nâng cao";
+            key = 2;
+            document.getElementById("search_advance").style.display = "table-row";
+            document.getElementById("news").innerHTML = "PHP và Javascript là ngôn ngữ lập trình";
+        } else if (key == 2) {
+            document.getElementById("show_search_advance").innerHTML = "Tìm kiếm nâng cao";
+            key = 1;
+            document.getElementById("news").innerHTML = "";
+            document.getElementById("search_advance").style.display = "none";
+            
+
+        }
+    }
+</script>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,51 +8,217 @@
     <title>Caculator</title>
 </head>
 <style>
-    button{
-        width: 30px;
-        height: 30px;
+    body {
+        font-family: Roboto;
+        background: #373B44;
+        background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+        background: linear-gradient(to right, #4286f4, #373B44);
     }
-    td{
-        width: 46px;
-        height: 45px;
+
+    #caculator {
+        width: 320px;
+        height: 520px;
+        background-color: #eaedef;
+        top: 20px;
+        margin: 0 auto;
+        position: relative;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    input{
-        width: 170px;
+
+    #result {
+        height: 120px;
+    }
+
+    #old_value {
+        text-align: right;
+        height: 20px;
+        margin: 0 20px;
+        padding-top: 20px;
+        font-size: 15px;
+        color: #919191;
+    }
+
+    #print_result {
+        text-align: right;
+        height: 60px;
+        margin: 10px 20px;
+        font-size: 30px;
+    }
+
+    #keyboard {
+        height: 400px;
+    }
+
+    .system,
+    .number,
+    .none {
+        width: 50px;
         height: 50px;
+        margin: 15px;
+        float: left;
+        border-radius: 50%;
+        border-width: 0;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .number,
+    .none {
+        background-color: #eaedef;
+    }
+
+    .system,
+    .number {
+        cursor: pointer;
+    }
+
+    .system:active,
+    .number:active {
+        font-size: 13px;
+    }
+
+    .system:focus,
+    .number:focus,
+    .none:focus {
+        outline: 0;
+    }
+
+    button:nth-child(4) {
+        font-size: 20px;
+        background-color: #20b2aa;
+    }
+
+    button:nth-child(8) {
+        font-size: 20px;
+        background-color: #ffa500;
+    }
+
+    button:nth-child(12) {
+        font-size: 20px;
+        background-color: #f08080;
+    }
+
+    button:nth-child(16) {
+        font-size: 20px;
+        background-color: #7d93e0;
+    }
+
+    button:nth-child(20) {
+        font-size: 20px;
+        background-color: #9477af;
     }
 </style>
+
 <body>
-    <div style="border:1px solid; width:200px; height: 270px; margin: auto; text-align: center;">
-        <input type="text" name="" id="" value="0">
-        <table>
-            <tr>
-                <td> <button value="1">1</button> </td>
-                <td> <button value="2">2</button> </td>
-                <td> <button value="3">3</button> </td>
-                <td> <button value="add">+</button> </td>
-            </tr>
-            <tr>
-                <td> <button value="4">4</button> </td>
-                <td> <button value="5">5</button> </td>
-                <td> <button value="6">6</button> </td>
-                <td> <button value="sub">-</button> </td>
-            </tr>
-            <tr>
-                <td> <button value="7">7</button> </td>
-                <td> <button value="8">8</button> </td>
-                <td> <button value="9">9</button> </td>
-                <td> <button value="mul">x</button> </td>
-            </tr>
-            <tr>
-                <td> <button value="clear">C</button> </td>
-                <td> <button value="0">0</button> </td>
-                <td> <button value="result">=</button> </td>
-                <td> <button value="div">/</button> </td>
-            </tr>
-        </table>
+    <div id="caculator">
+        <div id="result">
+            <div id="old_result">
+                <p id="old_value"></p>
+            </div>
+            <div id="print_result">
+                <p id="print_value"></p>
+            </div>
+        </div>
+        <div id="keyboard">
+            <button class="system" id="delete_all">C</button>
+            <button class="system" id="delete_a_number">CE</button>
+            <button class="system" id="%">%</button>
+            <button class="system" id="/">÷</button>
+            <button class="number" id="7">7</button>
+            <button class="number" id="8">8</button>
+            <button class="number" id="9">9</button>
+            <button class="system" id="*">×</button>
+            <button class="number" id="4">4</button>
+            <button class="number" id="5">5</button>
+            <button class="number" id="6">6</button>
+            <button class="system" id="-">-</button>
+            <button class="number" id="1">1</button>
+            <button class="number" id="2">2</button>
+            <button class="number" id="3">3</button>
+            <button class="system" id="+">+</button>
+            <button class="none" id="none"></button>
+            <button class="number" id="0">0</button>
+            <button class="none" id="none"></button>
+            <button class="system" id="=">=</button>
+        </div>
     </div>
 </body>
-</html>
 <script>
+    function getOldValue() {
+        return document.getElementById("old_value").innerText;
+    }
+    function printOldVale(num) {
+        document.getElementById("old_value").innerText = num;
+    }
+    function getResult() {
+        return document.getElementById("print_value").innerText;
+    }
+    function printResult(num) {
+        if(num =="")
+            document.getElementById("print_value").innerText = num;
+        else 
+            document.getElementById("print_value").innerText = formatNumber(num);
+    }
+    function formatNumber(num) {
+        var n = Number(num);
+        var value = n.toLocaleString("en");
+        return value;
+    }
+    function deleteFormatNumber(num) {
+        return Number(num.replace(/,/g, ''));
+    }
 
+    let number = document.getElementsByClassName("number");
+    for(let i = 0; i < number.length; i++) {
+        number[i].addEventListener("click",function(){
+            let result = deleteFormatNumber(getResult());
+            if(result != NaN){
+                result += this.id;
+                printResult(result);
+            }
+        })
+    }
+
+    function myEval(str){
+
+
+    }
+
+    let system = document.getElementsByClassName("system");
+    for( let i = 0; i < system.length; i++){
+        system[i].addEventListener("click", function(){
+            if(this.id == "delete_all"){
+                printResult("");
+                printOldVale("");
+            } else if (this.id == "delete_a_number") {
+                let result = deleteFormatNumber(getResult()).toString();
+                if(result) {
+                    result = result.substr(0, result.length - 1);
+                    printResult(result);
+                }
+            } else {
+                let result = getResult();
+                let old_result = getOldValue();
+                if(result != ""){
+                    result = deleteFormatNumber(result);
+                    old_result += result;
+                    if(this.id == "="){
+                        let last_result = eval(old_result);
+                        printResult(last_result);
+                        printOldVale("");
+                    } else {
+                        old_result += this.id;
+                        printOldVale(old_result);
+                        printResult(""); 
+                    }
+
+                }
+            }
+        })
+    }
+
+    // printResult(formatNumber(9999));
 </script>
+
+</html>
