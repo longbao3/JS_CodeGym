@@ -200,20 +200,11 @@
             } else {
                 let result = getResult();
                 let old_result = getOldValue();
-                if(result != ""){
-                    result = deleteFormatNumber(result);
-                    old_result += result;
-                    if(this.id == "="){
-                        let last_result = eval(old_result);
-                        printResult(last_result);
-                        printOldVale("");
-                    } else {
-                        old_result += this.id;
-                        printOldVale(old_result);
-                        printResult(""); 
-                    }
+                let temp = 0;
+                if(this.id == "+"){
 
                 }
+
             }
         })
     }
