@@ -1,58 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caculator</title>
+    <title>Document</title>
 </head>
-    <h1>Caculator</h1>
-    <input type="number" name="" id="number1"> </input>
-    <input type="number" name="" id="number2"> </input>
-    <br> <br> 
+<style>
+    button {
+        color: blue;
+        width: 50px;
+        height: 25px;
+    }
+    
+    input {
+        width: 260px;
+        height: 40px;
+    }
+</style>
 
-    <button onclick="add()">Addition(+)</button>
-    <button onclick="sub()">Subtraction(-)</button>
-    <button onclick="Mul()">Multiplication(X)</button>
-    <button onclick="Div()">Division(/)</button>
+<body>
 
-    <br><br>
-    <p>Result Division:
-        <p id="result">0</p>
-    </p>
-</body>
+    <body>
+        <form>
+            <fieldset style="width: 280px">
+                <table>
+                    <tr>
+                        <th colspan="4"> <input type="text" name="" id="" value=""><br><br> </th>
+                    </tr>
+                    <tr>
+                        <th><button type="button" value="7" onclick="hienthi7()">7</button> </th>
+                        <th><button type="button" value="8" onclick="hienthi8()">8</button> </th>
+                        <th><button type="button" value="9" onclick="hienthi9()">9</button> </th>
+                        <th><button type="button" value="/" onclick="Div()">/</button> </th>
+                    </tr>
+                    <tr>
+                        <th><button type="button" value="4" onclick="hienthi4()">4</button> </th>
+                        <th> <button type="button" value="5" onclick="hienthi5()">5</button> </th>
+                        <th> <button type="button" value="6" onclick="hienthi6()">6</button> </th>
+                        <th> <button type="button" value="*" onclick="Mul()">x</button> </th>
+                    </tr>
+                    <tr>
+                        <th> <button type="button" value="1" onclick="hienthi1()">1</button> </th>
+                        <th> <button type="button" value="2" onclick="hienthi2()">2</button> </th>
+                        <th> <button type="button" value="3" onclick="hienthi3()">3</button> </th>
+                        <th> <button type="button" value="-" onclick="Sub()">-</button> </th>
+                    </tr>
+                    <tr>
+                        <th> <button type="button" value="0" onclick="hienthi0()">0</button> </th>
+                        <th> <button type="button" onclick="">.</button> </th>
+                        <th> <button type="button" onclick="ketqua()" style="background-color: blue; color: white">=</button> </th>
+                        <th> <button type="button" value="+" onclick="Sum()">+</button> </th>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+        <script>
+            let hienthi = document.querySelector("input");
+            function hienthi0() {
+                hienthi.value += 0;
+            }
+
+            function hienthi1() {
+                hienthi.value += 1;
+            }
+
+            function hienthi2() {
+                hienthi.value += 2;
+            }
+
+            function hienthi3() {
+                hienthi.value += 3;
+            }
+
+            function hienthi4() {
+                hienthi.value += 4;
+            }
+
+            function hienthi5() {
+                hienthi.value += 5;
+            }
+
+            function hienthi6() {
+                hienthi.value += 6;
+            }
+
+            function hienthi7() {
+                hienthi.value += 7;
+            }
+
+            function hienthi8() {
+                hienthi.value += 8;
+            }
+
+            function hienthi9() {
+                hienthi.value += 9;
+            }
+
+            function Sum() {
+                hienthi.value += "+";
+            }
+
+            function Sub() {
+                hienthi.value += "-";
+            }
+
+            function Mul() {
+                hienthi.value += "*";
+            }
+
+            function Div() {
+                hienthi.value += "/";
+            }
+
+            function ketqua() {
+
+                let toan_tu_cong = hienthi.value.indexOf("+");
+                let toan_tu_tru = hienthi.value.indexOf("-");
+                let toan_tu_nhan = hienthi.value.indexOf("*");
+                let toan_tu_chia = hienthi.value.indexOf("/");
+        
+                let toantucong1 = parseInt(hienthi.value.slice(0,toan_tu_cong));
+                let toantucong2 = parseInt(hienthi.value.slice(toan_tu_cong+1,));
+               
+
+                let toantutru1 = parseInt(hienthi.value.slice(0,toan_tu_tru));
+                let toantutru2 = parseInt(hienthi.value.slice(toan_tu_tru+1,));
+                
+
+                let toantunhan1 = parseInt(hienthi.value.slice(0,toan_tu_nhan));
+                let toantunhan2 = parseInt(hienthi.value.slice(toan_tu_nhan + 1,));
+
+
+                let toantuchia1 = parseInt(hienthi.value.slice(0,toan_tu_chia));
+                let toantuchia2 = parseInt(hienthi.value.slice(toan_tu_chia + 1,));
+
+
+                if (toan_tu_cong != -1) {
+                    hienthi.value = toantucong1 + toantucong2;
+                } else if (toan_tu_tru != -1) {
+                    hienthi.value = toantutru1 - toantutru2;
+                } else if (toan_tu_nhan != -1) {
+                    hienthi.value = toantunhan1 * toantunhan2;
+                } else if (toan_tu_chia != -1) {
+                    hienthi.value = toantuchia1 /toantuchia2;
+                }
+            }
+        </script>
+    </body>
+
 </html>
-<script>
-    function add(){
-        let result1 = 0;
-        let number_1 = document.getElementById("number1").value;
-        let number_2 = document.getElementById("number2").value;
-        result = parseFloat(number_1) + parseFloat(number_2);
-        
-        document.getElementById("result").innerText = result;
-    }
-    function sub(){
-        let result1 = 0;
-        let number_1 = document.getElementById("number1").value;
-        let number_2 = document.getElementById("number2").value;
-        result = parseFloat(number_1) - parseFloat(number_2);
-        
-        document.getElementById("result").innerText = result;
-    }
-    function Mul(){
-        let result1 = 0;
-        let number_1 = document.getElementById("number1").value;
-        let number_2 = document.getElementById("number2").value;
-        result = parseFloat(number_1) * parseFloat(number_2);
-        
-        document.getElementById("result").innerText = result;
-    }
-    function Div(){
-        let result1 = 0;
-        let number_1 = document.getElementById("number1").value;
-        let number_2 = document.getElementById("number2").value;
-        result = parseFloat(number_1) / parseFloat(number_2);
-        
-        document.getElementById("result").innerText = result;
-    }
-</script>

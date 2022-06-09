@@ -1,12 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cung hoàng đạo</title>
+    <style>
+        body input {
+            width: 100px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <span>Ngày sinh: </span>
+    <input id="date_of_birth" type="number">
+    </br>
+    </br>
+    <span>Tháng sinh: </span>
+    <input id="month_of_birth" type="number">
+    </br>
+    </br>
+    <span>Năm sinh: </span>
+    <input id="year_of_birth" type="number">
+    </br>
+    </br>
+    <button onclick="check()">Kiểm tra</button>
+    <p id="age"></p>
+    <p id="zodiac"></p>
+    <p id="personality"></p>
+    <script>
+        function check() {
+            let date = document.getElementById("date_of_birth").value;
+            let month = document.getElementById("month_of_birth").value;
+            let year = document.getElementById("year_of_birth").value;
+            
+
+            if (date > 31 || date < 1) {
+                alert("Nhập sai ngày");
+                return;
+            }
+            if (month < 1 || month > 12) {
+                alert("Nhập sai tháng");
+                return;
+            }
+
+            console.log(date,month,year);
+
+            let zodiac;
+
+            switch (month) {
+                case '1':
+                    if (date > 19)
+                        zodiac = "Bảo Bình";
+                    else
+                        zodiac = "Ma Kết";
+                    break;
+                case '2':
+                    if (date > 19)
+                        zodiac = "Song Ngư";
+                    else
+                        zodiac = "Bảo Bình";
+                    break;
+                
+                case '3':
+                    if (date > 20)
+                        zodiac = "Bạch Dương";
+                    else
+                        zodiac = "Song Ngư";
+                    break;
+                
+                case '4':
+                    if (date > 19)
+                        zodiac = "Kim Ngưu";
+                    else
+                        zodiac = "Bạch Dương";
+                    break;
+                
+                case '5':
+                    
+                    if (date > 20)
+                        zodiac = "Song Tử";
+                    else
+                        zodiac = "Kim Ngưu";
+                    break;
+                    
+                case '6':
+                    if (date > 20)
+                        zodiac = "Cự Giải";
+                    else
+                        zodiac = "Song Tử";
+                    break;
+                
+                case '7':
+                    if (date > 22)
+                        zodiac = "Sư Tử";
+                    else
+                        zodiac = "Cự Giải";
+                    break;
+                case '8':
+                    
+                    if (date > 22)
+                        zodiac = "Xử Nữ";
+                    else
+                        zodiac = "Sư Tử";
+                    break;
+                    
+                case '9':
+                    if (date > 22)
+                        zodiac = "Thiên Bình";
+                    else
+                        zodiac = "Xử Nữ";
+                    break;
+                
+                case '10':
+                    if (date > 22)
+                        zodiac = "Thiên Yết";
+                    else
+                        zodiac = "Thiên Bình";
+                    break;
+                
+                case '11':
+                    if (date > 22)
+                        zodiac = "Nhân Mã";
+                    else
+                        zodiac = "Thiên Yết";
+                    break;
+                
+                case '12':
+                    if (date > 21)
+                        zodiac = "Ma Kết";
+                    else
+                        zodiac = "Nhân Mã";
+                    break;
+            }
+                console.log(zodiac);
+
+        }
+    </script>
 </body>
+
 </html>
